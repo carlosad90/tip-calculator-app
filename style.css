@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono";
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: #c5e4e7;
+}
+
+.calculator-container {
+  max-inline-size: 375px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 40px;
+}
+
+.logo {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+  margin-inline: auto;
+}
+
+.body-container {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 25px;
+  padding-block: 40px;
+  padding-inline: 24px;
+}
+
+.bill-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: hsl(186, 14%, 43%);
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+}
+
+.bill-input,
+.people-input {
+  display: block;
+  border-radius: 5px;
+  inline-size: 100%;
+  background-color: #f3f9fa;
+  text-align: right;
+  padding-inline: 16px;
+  padding-block: 8px;
+  font-size: 24px;
+  color: hsl(183, 100%, 15%);
+  font-weight: 700;
+  font-size: 24px;
+  outline: none;
+  border: transparent;
+}
+
+.people-input.show {
+  border: 2px solid red;
+}
+
+.bill-input:focus-visible {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+
+.people-input:focus-visible {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+
+.tip-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: hsl(186, 14%, 43%);
+  margin-block-start: 32px;
+}
+
+.tip-amounts {
+  margin-block-start: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 16px;
+  column-gap: 17px;
+}
+
+.btn {
+  height: 48px;
+  border-radius: 5px;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  display: block;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+}
+
+.btn.selected {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+.input-tip {
+  text-align: right;
+  color: hsl(186, 14%, 43%);
+  font-weight: 700;
+  background-color: #f3f9fa;
+  border-radius: 5px;
+  padding-inline-end: 8px;
+  height: 100%;
+  outline: none;
+  border: transparent;
+}
+
+.input-tip.show {
+  border: 2px solid red;
+}
+
+.input-tip:focus-visible {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+
+.input-wrapper {
+  margin-block-start: 16px;
+}
+
+.people-container {
+  margin-block-start: 32px;
+}
+
+.people-label {
+  font-weight: 700;
+  font-size: 16px;
+  color: hsl(186, 14%, 43%);
+  display: flex;
+}
+
+.total-container {
+  background-color: hsl(183, 100%, 15%);
+  margin-block-start: 32px;
+  padding-block: 40px;
+  padding-inline: 24px;
+  border-radius: 15px;
+}
+
+.reset-inputs {
+  margin-block-start: 32px;
+  display: block;
+  width: 100%;
+  padding-block: 16px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  color: hsl(183, 100%, 15%);
+  text-transform: uppercase;
+  background-color: hsl(172, 67%, 45%);
+  cursor: pointer;
+}
+
+.reset-inputs:hover {
+  background-color: #9fe8df;
+}
+
+.tip-amount-container,
+.bill-total-container {
+  display: flex;
+  align-items: center;
+}
+
+.tip-amount-labels,
+.bill-total-labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.tip-amount,
+.bill-amount {
+  margin-inline-start: auto;
+  color: hsl(172, 67%, 45%);
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.tip-amount-heading,
+.bill-total-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+}
+
+.tip-amount-subHeading,
+.bill-total-subHeading {
+  font-size: 13px;
+  font-weight: 700;
+  color: hsl(186, 14%, 43%);
+}
+
+.error {
+  display: none;
+  margin-inline-start: auto;
+  color: #ff0000;
+}
+
+.error.show {
+  display: block;
+}
+
+@media screen and (min-width: 1440px) {
+  .calculator-container {
+    max-inline-size: 1100px;
+    margin-inline: auto;
+  }
+  .body-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 40px;
+    padding-inline: 40px;
+    margin-block-start: 56px;
+  }
+  .total-container {
+    margin-block-start: 0px;
+    display: grid;
+    padding-inline: 40px;
+  }
+  .tip-container {
+    margin-block-start: 24px;
+  }
+  .tip-amounts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .bill-total-container {
+    margin-block-start: 40px;
+  }
+  .reset-inputs {
+    margin-block-start: 0px;
+    align-self: end;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

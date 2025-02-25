@@ -1,0 +1,285 @@
+$Strong-cyan: hsl(172, 67%, 45%);
+$Very-dark-cyan: hsl(183, 100%, 15%);
+$Dark-grayish-cyan: hsl(186, 14%, 43%);
+$Grayish-cyan: hsl(184, 14%, 56%);
+$Light-grayish-cyan: hsl(185, 41%, 84%);
+$Very-light-grayish-cyan: hsl(189, 41%, 97%);
+$White: hsl(0, 0%, 100%);
+
+$ff: "Space Mono";
+$ff-sm: 8px;
+$ff-md: 16px;
+$ff-inputs: 24px;
+
+$spacing-100: 8px;
+$spacing-200: 16px;
+$spacing-300: 24px;
+$spacing-400: 32px;
+$spacing-500: 40px;
+$spacing-600: 48px;
+$spacing-700: 56px;
+$spacing-800: 64px;
+$spacing-900: 72px;
+$spacing-1000: 88px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $ff;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: #c5e4e7;
+}
+
+.calculator-container {
+  max-inline-size: 375px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: $spacing-500;
+}
+
+.logo {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+  margin-inline: auto;
+}
+
+.body-container {
+  background-color: $White;
+  border-radius: 25px;
+  padding-block: $spacing-500;
+  padding-inline: $spacing-300;
+}
+
+.bill-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: $Dark-grayish-cyan;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: $spacing-200;
+}
+
+.bill-input,
+.people-input {
+  display: block;
+  border-radius: 5px;
+  inline-size: 100%;
+  background-color: #f3f9fa;
+  text-align: right;
+  padding-inline: $spacing-200;
+  padding-block: $spacing-100;
+  font-size: $ff-inputs;
+  color: $Very-dark-cyan;
+  font-weight: 700;
+  font-size: $ff-inputs;
+  outline: none;
+  border: transparent;
+}
+
+.people-input.show {
+  border: 2px solid red;
+}
+
+.bill-input:focus-visible {
+  border: 2px solid $Strong-cyan;
+}
+
+.people-input:focus-visible {
+  border: 2px solid $Strong-cyan;
+}
+
+.tip-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: $Dark-grayish-cyan;
+  margin-block-start: $spacing-400;
+}
+
+.tip-amounts {
+  margin-block-start: $spacing-200;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 16px;
+  column-gap: 17px;
+}
+
+.btn {
+  height: 48px;
+  border-radius: 5px;
+  background-color: $Very-dark-cyan;
+  color: $White;
+  font-weight: 700;
+  display: block;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  background-color: $Light-grayish-cyan;
+  color: $Very-dark-cyan;
+}
+
+.btn.selected {
+  background-color: $Strong-cyan;
+  color: $Very-dark-cyan;
+}
+
+.input-tip {
+  text-align: right;
+  color: $Dark-grayish-cyan;
+  font-weight: 700;
+  background-color: #f3f9fa;
+  border-radius: 5px;
+  padding-inline-end: $ff-sm;
+  height: 100%;
+  outline: none;
+  border: transparent;
+}
+
+.input-tip.show {
+  border: 2px solid red;
+}
+
+.input-tip:focus-visible {
+  border: 2px solid $Strong-cyan;
+}
+
+.input-wrapper{
+	margin-block-start: $spacing-200;
+}
+
+.people-container {
+  margin-block-start: $spacing-400;
+}
+
+.people-label {
+  font-weight: 700;
+  font-size: 16px;
+  color: $Dark-grayish-cyan;
+  display: flex;
+}
+
+.total-container {
+  background-color: $Very-dark-cyan;
+  margin-block-start: $spacing-400;
+  padding-block: $spacing-500;
+  padding-inline: $spacing-300;
+  border-radius: 15px;
+}
+
+.reset-inputs {
+  margin-block-start: $spacing-400;
+  display: block;
+  width: 100%;
+  padding-block: $spacing-200;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  color: $Very-dark-cyan;
+  text-transform: uppercase;
+  background-color: $Strong-cyan;
+  cursor: pointer;
+}
+
+.reset-inputs:hover {
+  background-color: #9fe8df;
+}
+
+.tip-amount-container,
+.bill-total-container {
+  display: flex;
+  align-items: center;
+}
+
+.tip-amount-labels,
+.bill-total-labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.tip-amount,
+.bill-amount {
+  margin-inline-start: auto;
+  color: $Strong-cyan;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.tip-amount-heading,
+.bill-total-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: $White;
+}
+
+.tip-amount-subHeading,
+.bill-total-subHeading {
+  font-size: 13px;
+  font-weight: 700;
+  color: $Dark-grayish-cyan;
+}
+
+.error {
+  display: none;
+  margin-inline-start: auto;
+  color: #ff0000;
+}
+
+.error.show {
+  display: block;
+}
+
+@media screen and (min-width: 1440px) {
+  .calculator-container {
+    max-inline-size: 1100px;
+    margin-inline: auto;
+  }
+
+  .body-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: $spacing-500;
+    padding-inline: $spacing-500;
+    margin-block-start: $spacing-700;
+  }
+
+  .total-container {
+    margin-block-start: 0px;
+    display: grid;
+    padding-inline: $spacing-500;
+  }
+
+  .tip-container {
+    margin-block-start: $spacing-300;
+  }
+
+  .tip-amounts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .bill-total-container {
+    margin-block-start: $spacing-500;
+  }
+
+  .reset-inputs {
+    margin-block-start: 0px;
+    align-self: end;
+  }
+}
