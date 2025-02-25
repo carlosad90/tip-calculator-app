@@ -43,7 +43,12 @@
                 src="./images/icon-dollar.svg"
                 alt="dollar sign"
               />
-              <input class="bill-input" type="number" placeholder="0.00" />
+              <input
+                class="bill-input"
+                min="1"
+                type="number"
+                placeholder="0.00"
+              />
             </div>
           </div>
 
@@ -76,7 +81,7 @@
               <input
                 class="people-input"
                 type="number"
-                min="0"
+                min="1"
                 max="100"
                 placeholder="0"
               />
@@ -101,7 +106,7 @@
               <span class="bill-amount">$0.00</span>
             </div>
           </div>
-          <input class="reset-inputs" type="submit" value="Reset" />
+          <input class="reset-inputs" disabled type="submit" value="Reset" />
         </div>
       </section>
     </main>

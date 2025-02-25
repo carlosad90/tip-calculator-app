@@ -89,7 +89,7 @@ body {
   font-weight: 700;
   font-size: $ff-inputs;
   outline: none;
-  border: transparent;
+  border: none;
 }
 
 .people-input.show {
@@ -161,8 +161,8 @@ body {
   border: 2px solid $Strong-cyan;
 }
 
-.input-wrapper{
-	margin-block-start: $spacing-200;
+.input-wrapper {
+  margin-block-start: $spacing-200;
 }
 
 .people-container {
@@ -195,11 +195,17 @@ body {
   color: $Very-dark-cyan;
   text-transform: uppercase;
   background-color: $Strong-cyan;
+  border: none;
   cursor: pointer;
 }
 
 .reset-inputs:hover {
   background-color: #9fe8df;
+}
+
+.reset-inputs.empty {
+  background-color: #0d686d;
+  color: #00474b;
 }
 
 .tip-amount-container,

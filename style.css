@@ -65,7 +65,7 @@ body {
   font-weight: 700;
   font-size: 24px;
   outline: none;
-  border: transparent;
+  border: none;
 }
 
 .people-input.show {
@@ -171,11 +171,17 @@ body {
   color: hsl(183, 100%, 15%);
   text-transform: uppercase;
   background-color: hsl(172, 67%, 45%);
+  border: none;
   cursor: pointer;
 }
 
 .reset-inputs:hover {
   background-color: #9fe8df;
+}
+
+.reset-inputs.empty {
+  background-color: #0d686d;
+  color: #00474b;
 }
 
 .tip-amount-container,
